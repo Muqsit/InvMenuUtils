@@ -56,7 +56,7 @@ $menu->setListener(InvMenuListenerUtils::slotSpecific($menu, [
 	16 => function(Player $player, Item $itemClicked, Item $itemClickedWith, SlotChangeAction $action) : bool{
 		$player->sendMessage("You clicked slot #16");
 		return true;
-	}
+	},
 	-1 => function(Player $player, Item $itemClicked, Item $itemClickedWith, SlotChangeAction $action) : bool{
 		$player->sendMessage("Fallback: You clicked slot #" . $action->getSlot());
 		return true;
@@ -65,7 +65,7 @@ $menu->setListener(InvMenuListenerUtils::slotSpecific($menu, [
 ```
 
 ## Blacklisting specific slots
-**NOTE:** This method is applicable ONLY to non-readonly InvMenu instances.
+**NOTE:** This method is applicable ONLY to non-readonly InvMenu instances.<br>
 Blacklisting an array of slots disallows players to modify those slots.
 ```php
 $menu = InvMenu::create(InvMenu::TYPE_CHEST);
@@ -85,7 +85,7 @@ $menu->setListener(InvMenuListenerUtils::multiple(
 ```
 
 ## Whitelisting specific slots
-**NOTE:** This method is applicable ONLY to non-readonly InvMenu instances.
+**NOTE:** This method is applicable ONLY to non-readonly InvMenu instances.<br>
 Whitelisting an array of slots allows players to modify ONLY those slots.
 ```php
 $menu = InvMenu::create(InvMenu::TYPE_CHEST);
@@ -105,7 +105,7 @@ $menu->setListener(InvMenuListenerUtils::multiple(
 ```
 
 ## Filtering items with specific NBT tags
-**NOTE:** This method is applicable ONLY to non-readonly InvMenu instances.
+**NOTE:** This method is applicable ONLY to non-readonly InvMenu instances.<br>
 Filter items only with a specific NBT tag on them to be taken out of the inventory.
 ```php
 $menu->setListener(InvMenuListenerUtils::onlyItemsWithTag("CustomItem", StringTag::class));
