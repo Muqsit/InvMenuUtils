@@ -66,7 +66,7 @@ $menu->setListener(InvMenuListenerUtils::slotSpecific($menu, [
 
 ## Blacklisting specific slots
 **NOTE:** This method is applicable ONLY to non-readonly InvMenu instances.<br>
-Blacklisting an array of slots disallows players to modify those slots.
+Blacklisting an array of slots disallows players from modify those slots.
 ```php
 $menu = InvMenu::create(InvMenu::TYPE_CHEST);
 $menu->setListener(InvMenuListenerUtils::blacklistSlots([0, 4, 8]));
@@ -106,11 +106,11 @@ $menu->setListener(InvMenuListenerUtils::multiple(
 
 ## Filtering items with specific NBT tags
 **NOTE:** This method is applicable ONLY to non-readonly InvMenu instances.<br>
-Filter items only with a specific NBT tag on them to be taken out of the inventory.
+Filter items only with a specific NBT tag on them to allow players to take those items out of the inventory.
 ```php
 $menu->setListener(InvMenuListenerUtils::onlyItemsWithTag("CustomItem", StringTag::class));
 ```
-Filter items only without a specific NBT tag on them to be taken out of the inventory.
+Filter items only without a specific NBT tag on them to allow players to take those items out of the inventory.
 ```php
 $menu->setListener(InvMenuListenerUtils::onlyItemsWithoutTag("Button", ByteTag::class));
 ```
