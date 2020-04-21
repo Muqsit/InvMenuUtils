@@ -10,11 +10,11 @@ $menu = InvMenu::create(InvMenu::TYPE_CHEST);
 $menu->setListener(InvMenuListenerUtils::multiple(
 	$menu,
 	function(Player $player, Item $itemClicked, Item $itemClickedWith, SlotChangeAction $action) : bool{
-		echo "This listener is called first" . TextFormat::EOL;
+		echo "This listener is called first" . PHP_EOL;
 		return true;
 	},
 	function(Player $player, Item $itemClicked, Item $itemClickedWith, SlotChangeAction $action) : bool{
-		echo "This listener is called second." . TextFormat::EOL;
+		echo "This listener is called second." . PHP_EOL;
 		return false;
 	},
 	function(Player $player, Item $itemClicked, Item $itemClickedWith, SlotChangeAction $action) : bool{
@@ -32,13 +32,13 @@ $menu->readonly();
 $menu->setListener(InvMenuListenerUtils::multiple(
 	$menu,
 	function(Player $player, Item $itemClicked, Item $itemClickedWith, SlotChangeAction $action) : void{
-		echo "This listener is called first" . TextFormat::EOL;
+		echo "This listener is called first" . PHP_EOL;
 	},
 	function(Player $player, Item $itemClicked, Item $itemClickedWith, SlotChangeAction $action) : void{
-		echo "This listener is called second." . TextFormat::EOL;
+		echo "This listener is called second." . PHP_EOL;
 	},
 	function(Player $player, Item $itemClicked, Item $itemClickedWith, SlotChangeAction $action) : void{
-		echo "This listener is called third." . TextFormat::EOL;
+		echo "This listener is called third." . PHP_EOL;
 	}
 ));
 ```
